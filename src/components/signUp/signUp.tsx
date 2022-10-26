@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const [password, setPassword] = useState(false);
+  const navigate = useNavigate();
 
   const togglePassword = () => {
     setPassword(!password);
@@ -43,6 +45,7 @@ const SignUp = () => {
         if (userValues.mPin && userValues.cmPin && userValues.mPin === cmPin) {
           enteredData.push(userValues);
           localStorage.setItem("users", JSON.stringify(enteredData));
+          navigate("/");
         } else {
           alert("MPIN doesnot match");
         }
@@ -104,18 +107,22 @@ const SignUp = () => {
         <form className="formConatiner" onSubmit={submitHandler}>
           <div className="txtField">
             <input
-              type="text"
+              type="number"
               className="mobileNo"
               placeholder="Mobile Number"
               name="mobileNo"
+              maxLength={10}
+              minLength={10}
             />
           </div>
           <div className="txtField">
             <input
-              type="password"
+              type="text"
               className="mPin"
               placeholder="Enter Mpin"
               name="mPin"
+              maxLength={4}
+              minLength={4}
             />
           </div>
           <div className="txtField">
@@ -124,6 +131,8 @@ const SignUp = () => {
               className="cMPin"
               placeholder="Re-enter Mpin"
               name="cmPin"
+              maxLength={4}
+              minLength={4}
             />
             <img
               src={require("../../assets/icons/eye_on.png")}
@@ -134,7 +143,7 @@ const SignUp = () => {
           </div>
 
           <div>
-            <button className="btnSignIn">SIGN IN</button>
+            <button className="btnSignIn">SIGN UP</button>
           </div>
         </form>
       </div>

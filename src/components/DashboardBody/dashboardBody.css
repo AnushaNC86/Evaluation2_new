@@ -1,0 +1,104 @@
+.homeBodyContiner {
+    position: relative;
+    margin-top: 3rem;
+    margin-left: 11rem;
+
+
+}
+
+.homebodyHead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
+.sitesMedia {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.socialMediaContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 37px;
+}
+
+.socialMediaHead {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+}
+
+.socialMediaCount {
+    background-color: var(--sideBarColor);
+    border-radius: 50%;
+    height: 37px;
+    width: 37px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 27px;
+}
+
+.cross {
+    transform: rotate(45deg);
+    position: absolute;
+    bottom: 4.5rem;
+
+}
+
+.searchContainer {
+    display: flex;
+
+    gap: 27px;
+
+}
+
+.search {
+    border: none;
+    outline: none;
+    width: 17rem;
+    border-bottom: 1px solid var(--sideBarColor);
+    color: #A5A5A5;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 24px;
+    padding: 7px;
+}
+
+.searchIcon {
+    position: absolute;
+    top: 0.5rem;
+    right: 1.5rem;
+}
+
+.Sites {
+    color: #3C4857;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 41px;
+    border-bottom: 3px solid var(--activecolor);
+    border-radius: 3px;
+    width: 3rem;
+
+
+}
+
+.socialMedia {
+    color: #3C4857;
+    font-family: "Open Sans";
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 33px;
+}

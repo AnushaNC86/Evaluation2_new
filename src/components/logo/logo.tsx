@@ -25,7 +25,7 @@ const Logo = () => {
       <div className="signInUpTabs">
         <div className={select === "login" ? "signInTab" : ""}>
           <Link to="/" className="linkTab">
-            SIGN IN
+            SIGN UP
           </Link>
         </div>
         <div
@@ -35,7 +35,7 @@ const Logo = () => {
           }}
         >
           <Link to="/signup" className="linkTab">
-            SIGN UP
+            SIGN IN
           </Link>
         </div>
       </div>

@@ -1,19 +1,39 @@
 import { useState } from "react";
 import "./signIn.css";
-import { Link } from "react-router-dom";
-import LoginPage from "../../views/loginPage/loginPage";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignIn = () => {
   const [password, setPassword] = useState(false);
+  const navigate = useNavigate();
 
   const togglePassword = () => {
     setPassword(!password);
   };
 
-  const onsubmitHandler=(e:any)=>{
-    else.preventDefault();
-    const mobile = e.target.
-  } 
+  const onsubmitHandler = (e: any) => {
+    e.preventDefault();
+    const mobile = e.target.mobileNo.value;
+    const mPin = e.target.mPin.value;
+
+    const loginData = { mobile, mPin };
+    console.log("login data", loginData);
+
+    const storedData = JSON.parse(localStorage.getItem("users") || "[]");
+    console.log("storedData", storedData);
+    if (loginData.mobile !== "" && loginData.mPin !== "") {
+      storedData.map((user: any) => {
+        if (user.mobile === loginData.mobile) {
+          if (user.mPin === loginData.mPin) {
+            navigate("/home");
+          } else {
+            alert("enter valid credentials");
+          }
+        }
+      });
+    } else {
+      alert("enter all fileds");
+    }
+  };
 
   // const existedUsers = localStorage.getItem("users") || "[]";
   // console.log("existing users:", existedUsers);
@@ -42,10 +62,12 @@ const SignIn = () => {
         <form className="formConatiner" onSubmit={onsubmitHandler}>
           <div className="txtField">
             <input
-              type="text"
+              type="number"
               className="mobileNo"
               placeholder="Mobile Number"
               name="mobileNo"
+              maxLength={10}
+              minLength={10}
             />
           </div>
           <div className="txtField">
@@ -54,6 +76,8 @@ const SignIn = () => {
               className="mPin"
               placeholder="Enter Mpin"
               name="mPin"
+              maxLength={4}
+              minLength={4}
             />
             <img
               src={require("../../assets/icons/eye_on.png")}

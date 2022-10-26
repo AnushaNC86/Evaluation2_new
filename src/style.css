@@ -9,16 +9,11 @@
 
 :root {
   --backgroundBlue: linear-gradient(180deg, #20BBFF 0%, #0E85FF 100%);
+  --sideBarColor: #2892FF;
+  --activecolor: #FFA136;
 }
 
 .App {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 100vw;
-  min-height: 100vh;
-}
 
-body {
   min-height: 100vh;
 }

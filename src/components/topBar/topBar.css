@@ -1,0 +1,27 @@
+.topBarContainer {
+
+    background-color: #d5dcebbd;
+    z-index: 1;
+    margin-left: 8rem;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 8rem;
+    padding: 2rem;
+
+}
+
+.topbarContents {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+}
+
+.topBarChoices {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10%;
+}

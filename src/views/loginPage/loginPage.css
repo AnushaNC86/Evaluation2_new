@@ -1,13 +1,21 @@
 .login {
-  border-radius: 15px;
-  background: var(--backgroundBlue);
-  box-shadow: 0 8px 18px 10px rgba(0, 0, 0, 0.02);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
 }
 
 .loginPageContainer {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  border-radius: 15px;
+  background: var(--backgroundBlue);
+  box-shadow: 0 8px 18px 10px rgba(0, 0, 0, 0.02);
 }
 
 .logo {
@@ -96,6 +104,10 @@
     display: flex;
     justify-content: space-between;
     width: 269px;
+  }
+
+  .signInHead {
+    display: none;
   }
 
 }
