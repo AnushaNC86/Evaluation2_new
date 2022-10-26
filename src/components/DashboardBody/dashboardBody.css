@@ -294,11 +294,24 @@ body.active-modal {
     margin-bottom: 41px;
 }
 
-.modalForm {
+/* .modalForm {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-row-gap: 26px;
     grid-column-gap: 20px;
+} */
+
+
+.modalForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputFiledItemss {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
 }
 
 .inputField {
@@ -322,13 +335,13 @@ body.active-modal {
     background-color: #f5f7fb;
     height: 29px;
     padding: 10px;
-    width: 100%;
+    width: 80%;
 }
 
 .modalButtons {
     display: flex;
-    justify-content: space-between;
-    gap: 10%;
+    justify-content: flex-end;
+    gap: 3%;
 }
 
 .resetBtn {

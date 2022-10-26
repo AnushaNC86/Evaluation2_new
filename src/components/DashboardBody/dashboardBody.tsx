@@ -169,7 +169,7 @@ const DashBoardBody = () => {
                     <div className="url">URL</div>
                     <input type="text" name="url" className="modalInput1" />
                   </div>
-                  <div className="inputFiledItems">
+                  <div className="inputFiledItemss">
                     <div className="textField">
                       <div>Site Name</div>
                       <input
@@ -183,7 +183,7 @@ const DashBoardBody = () => {
                       <input type="text" name="sector" className="modalInput" />
                     </div>
                   </div>
-                  <div className="inputFiledItems">
+                  <div className="inputFiledItemss">
                     <div className="textField">
                       <div>Site Name</div>
                       <input

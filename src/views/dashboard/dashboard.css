@@ -22,8 +22,16 @@
 }
 
 @media only screen and (max-width: 580px) {
-    .topBarContainer {
+    .topbarContents {
         display: none;
+    }
+
+    .topBarContainer {
+        position: fixed;
+        background-color: var(--sideBarColor);
+        margin: 0;
+        padding-top: 1.5rem;
+        height: 80px;
     }
 
     .sideBar {
@@ -42,14 +50,68 @@
         justify-content: center;
         align-items: center;
         gap: 23px;
-        margin-top: 5rem;
+        padding-top: 5rem;
     }
 
     .cross {
 
         position: fixed;
-        bottom: 31px;
+        bottom: 0;
         right: 33px;
         z-index: 1;
     }
+
+    .topBarMobile {
+        display: flex;
+
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .topBarLeft,
+    .topBarRight {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .searchBar {
+        display: none;
+    }
+
+    .Sites {
+        position: fixed;
+        z-index: 1;
+        top: 8rem;
+    }
+
+    .socialMediaHead {
+
+        position: fixed;
+        top: 7rem;
+        right: 1rem;
+        z-index: 1;
+
+    }
+
+    .socialMedia {
+        font-size: 19.2px;
+    }
+
+    .socialMediaCount {
+        width: 32px;
+    }
+
+    .modalInput1 {
+        width: 68%;
+    }
+
+    .modalForm {
+        display: flex;
+    }
+
+
+
+
 }
