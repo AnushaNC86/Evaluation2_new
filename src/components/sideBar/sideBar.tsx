@@ -18,6 +18,7 @@ const SideBar = () => {
           />
         </div>
       </div>
+      <div className="activeTab"></div>
     </div>
   );
 };

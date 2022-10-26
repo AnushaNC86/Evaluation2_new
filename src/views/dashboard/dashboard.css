@@ -8,3 +8,48 @@
     min-width: 80vw;
 
 }
+
+@media only screen and (max-width: 900px) {
+    .dashboard {
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .topBarContainer {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 580px) {
+    .topBarContainer {
+        display: none;
+    }
+
+    .sideBar {
+        display: none;
+    }
+
+    .homeBodyContiner {
+        position: relative;
+        margin-top: 3rem;
+        margin-left: 1rem;
+    }
+
+    .sitesContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 23px;
+        margin-top: 5rem;
+    }
+
+    .cross {
+
+        position: fixed;
+        bottom: 31px;
+        right: 33px;
+        z-index: 1;
+    }
+}

@@ -29,7 +29,8 @@
 .socialMediaHead {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    margin-top: 22px;
     gap: 0.5rem;
 
 }
@@ -53,7 +54,6 @@
 .cross {
     transform: rotate(45deg);
     position: absolute;
-    bottom: 4.5rem;
 
 }
 
@@ -101,4 +101,262 @@
     font-size: 24px;
     letter-spacing: 0;
     line-height: 33px;
+}
+
+.addNewDataContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13.5rem 3rem;
+    color: #3C4857;
+    font-size: 21px;
+    letter-spacing: 0;
+    font-weight: 700;
+    line-height: 36px;
+    text-align: center;
+}
+
+.addSite {
+    background: #A5A5A5;
+    padding: 3rem;
+    border-radius: 5%;
+}
+
+.addNew {
+    color: #3C4857;
+
+    font-size: 26px;
+    letter-spacing: 0;
+    line-height: 36px;
+    text-align: center;
+}
+
+.addNewDataContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.sitesContainer {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 23px;
+    margin-top: 5rem;
+}
+
+.sitesContents {
+    width: 343px;
+    background-color: #d6c2c2;
+    border-radius: 1em;
+    padding: 12px 20px;
+}
+
+.cardImg {
+    background-position: "cover";
+    border-radius: "50%";
+}
+
+.cardHead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.siteLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3c4857;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 22px;
+    text-align: center;
+
+}
+
+.copyTitle {
+    color: #0e85ff;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 27px;
+    padding-bottom: 6px;
+}
+
+.cardCopy {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+}
+
+.copyPass {
+    color: var(--sideBarColor);
+    font-size: 12.6px;
+    letter-spacing: 0;
+    line-height: 17px;
+}
+
+
+body.active-modal {
+    overflow-y: hidden;
+}
+
+.btn-modal {
+    padding: 10px 20px;
+    display: block;
+    margin: 100px auto 0;
+    font-size: 18px;
+}
+
+.modal,
+.modalCover {
+    width: 74.1vw;
+    height: 100vh;
+    top: 13.8%;
+    right: 7.9%;
+    bottom: 0;
+    position: fixed;
+}
+
+.modalCover {
+    background: rgba(49, 49, 49, 0.8);
+}
+
+.modalContent {
+    position: relative;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background-color: #ffffff;
+    padding: 30.5px 37.5px;
+    border-radius: 0.8em;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+/* .modalCloseBtn {
+    
+    bottom: 35rem;
+    left: 54rem;
+    padding: 5px 7px;
+} */
+.modalBtnClose {
+    position: absolute;
+    top: -15px;
+    right: -12px;
+
+}
+
+.modalHeading {
+    color: #3c4857;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 41px;
+    margin-bottom: 41px;
+}
+
+.modalInput {
+    border: none;
+    outline: none;
+    border: 1px solid #f5f7fb;
+    border-radius: 4px;
+    background-color: #f5f7fb;
+    height: 36px;
+    padding: 10px;
+
+
+}
+
+.modalInput1 {
+    border: none;
+    outline: none;
+    border: 1px solid #f5f7fb;
+    border-radius: 4px;
+    background-color: #f5f7fb;
+    height: 36px;
+    padding: 10px;
+    width: 77%;
+
+}
+
+.modalHeading {
+    color: #3c4857;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 41px;
+    margin-bottom: 41px;
+}
+
+.modalForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 26px;
+    grid-column-gap: 20px;
+}
+
+.inputField {
+    grid-column: span 2;
+}
+
+.textField div,
+.url {
+    color: #949ca5;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 49px;
+
+}
+
+.modalInputNotes {
+    border: none;
+    outline: none;
+    border: 1px solid #f5f7fb;
+    border-radius: 4px;
+    background-color: #f5f7fb;
+    height: 29px;
+    padding: 10px;
+    width: 100%;
+}
+
+.modalButtons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10%;
+}
+
+.resetBtn {
+    background: none;
+    height: 46px;
+    width: 181px;
+    border: 1px solid #0e85ff;
+    border-radius: 4px;
+    color: #0e85ff;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 24px;
+    text-align: center;
+
+
+}
+
+.saveBtn {
+    background-color: #0e85ff;
+    color: #ffffff;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 24px;
+    height: 46px;
+    width: 181px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
 }
