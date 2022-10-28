@@ -12,7 +12,7 @@ const DashBoard = () => {
     <div className="dashboardContainer">
       {toast ? <Toast message="Succesfully signed into your account!!!" /> : ""}
       <div className="dashboard">
-        <div clakkkkssName="dashobardInside">
+        <div className="dashobardInside">
           <div className="sideBar">
             <SideBar />
           </div>
