@@ -25,7 +25,10 @@ const SignIn = () => {
         if (user.mobile === loginData.mobile) {
           if (user.mPin === loginData.mPin) {
             localStorage.setItem("currentUser", JSON.stringify(mobile));
+            localStorage.setItem("Auth", "true");
+            sessionStorage.setItem("signInSuccess", "true");
             navigate("/home");
+            window.location.reload();
           } else {
             alert("enter valid credentials");
           }

@@ -34,6 +34,7 @@ const ModalEdit = (props: any) => {
     };
     editData[i] = modalData;
     localStorage.setItem(currentUser, JSON.stringify(editData));
+    window.location.reload();
   };
 
   const editHandler = (e: any) => {
