@@ -2,10 +2,13 @@ import "./dashboardBody.css";
 import { useState } from "react";
 import Modal from "../modal/modal";
 import SitesCard from "../sitesCard/sitesCard";
+import ModalEdit from "../modalEdit/modaledit";
 
 const DashBoardBody = () => {
-  const [data, setData] = useState(false);
+  const [edit, setEdit] = useState(false);
   const [modal, setModal] = useState(false);
+  const [search, setSearch] = useState("");
+  const [modalEdit, setModalEdit] = useState(0);
 
   const currentUser = JSON.parse(localStorage.getItem("currentUser") || "[]");
   console.log("currentUser", currentUser);
@@ -15,6 +18,18 @@ const DashBoardBody = () => {
 
   const openModal = () => {
     setModal(!modal);
+  };
+  const openModalEdit = () => {
+    setEdit(!edit);
+  };
+  const getSearch = (e: any) => {
+    setSearch(e.target.value);
+    console.log("search term", search);
+  };
+
+  const childToParent = (data: any, i: number) => {
+    setEdit(data);
+    setModalEdit(i);
   };
 
   return (
@@ -31,6 +46,7 @@ const DashBoardBody = () => {
                 className="search"
                 name="search"
                 placeholder="Search here"
+                onChange={getSearch}
               />
               <img
                 src={require("../../assets/icons/search.png")}
@@ -82,7 +98,11 @@ const DashBoardBody = () => {
             </div>
           </div>
           <div className="addSiteContainer">
-            <SitesCard siteData={siteData} />
+            <SitesCard
+              siteData={siteData}
+              search={search}
+              childToParent={childToParent}
+            />
             <div className="addModalMobile">
               <img
                 src={require("../../assets/icons/close_btn.png")}
@@ -97,20 +117,48 @@ const DashBoardBody = () => {
       {modal && (
         <>
           <div className="modal">
-            <div className="modalCover">
-              <div className="modalContent">
-                <div className="modalClose"></div>
-                <div className="modalCloseBtn" onClick={openModal}>
-                  <img
-                    src={require("../../assets/icons/close_btn.png")}
-                    alt=""
-                    className="modalBtnClose"
+            <div className="overlay">
+              <div className="modelInfo">
+                <div className="modalContent">
+                  <Modal />
+                  <button className="close-modal">
+                    <img
+                      src={require("../../assets/icons/close_btn.png")}
+                      alt="drop"
+                      className="closeImg"
+                      onClick={() => {
+                        setModal(false);
+                      }}
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+      {edit && (
+        <>
+          <div className="modal">
+            <div className="overlay">
+              <div className="modelInfo">
+                <div className="modalContent">
+                  <ModalEdit
+                    index={modalEdit}
+                    edit1={edit}
+                    setEdit1={setEdit}
                   />
+                  <button className="close-modal">
+                    <img
+                      src={require("../../assets/icons/close_btn.png")}
+                      alt="drop"
+                      className="closeImg"
+                      onClick={() => {
+                        setEdit(false);
+                      }}
+                    />
+                  </button>
                 </div>
-                <div className="modalHead">
-                  <div className="modalHeading">Add Site</div>
-                </div>
-                <Modal />
               </div>
             </div>
           </div>

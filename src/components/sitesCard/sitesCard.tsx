@@ -1,5 +1,6 @@
 import React from "react";
 import "./sitesCard.css";
+import { useState } from "react";
 
 type siteProps = {
   siteData: {
@@ -11,44 +12,68 @@ type siteProps = {
     notes: string;
   }[];
 };
-const SitesCard = (props: siteProps) => {
+const SitesCard = (props: any) => {
+  const [modal, setModal] = useState("false");
+  console.log("props.search", props);
   return (
     <div>
       <div className="sitesContainer">
-        {props.siteData.map((ele: any, i: number) => {
-          return (
-            <div key={i} className="sitesContents">
-              <div className="cardHead">
-                <div className="cardLogo">
-                  {ele.icon !== "" ? (
-                    <img
-                      src={require("../../assets/icons/Facebook.png")}
-                      height="50px"
-                      style={{
-                        backgroundPosition: "cover",
-                        borderRadius: "50%",
-                      }}
-                    />
-                  ) : (
-                    <img src={ele.icon} alt="" />
-                  )}
-                </div>
+        {props.siteData
+          .filter((ele: any) => {
+            return props.search.toLowerCase() === ""
+              ? ele
+              : ele.siteName.toLowerCase().includes(props.search.toLowerCase());
+          })
+          .map((ele: any, i: number) => {
+            return (
+              <div
+                key={i}
+                className="sitesContents"
+                onClick={() => {
+                  props.childToParent(true, i);
+                }}
+              >
+                <div className="cardHead">
+                  <div className="cardLogo">
+                    {ele.icon !== "" ? (
+                      <img
+                        src={require("../../assets/icons/Facebook.png")}
+                        height="50px"
+                        style={{
+                          backgroundPosition: "cover",
+                          borderRadius: "50%",
+                        }}
+                      />
+                    ) : (
+                      <img src={ele.icon} alt="" />
+                    )}
+                  </div>
 
-                <div>
-                  <div className="copyTitle"> {ele.siteName}</div>
-                  <div className="cardCopy">
-                    <img
-                      src={require("../../assets/icons/copy.png")}
-                      alt="copy"
-                    />
-                    <div className="copyPass">Copy Password</div>
+                  <div>
+                    <div className="copyTitle"> {ele.siteName}</div>
+                    <div className="cardCopy" style={{ cursor: "pointer" }}>
+                      <img
+                        src={require("../../assets/icons/copy.png")}
+                        alt="copy"
+                        onClick={() => {
+                          navigator.clipboard.writeText(ele.sitePass);
+                        }}
+                      />
+                      <div
+                        className="copyPass"
+                        onClick={() => {
+                          navigator.clipboard.writeText(ele.sitePass);
+                        }}
+                      >
+                        Copy Password
+                      </div>
+                    </div>
                   </div>
                 </div>
+                <div className="siteLink">{ele.url}</div>
               </div>
-              <div className="siteLink">{ele.url}</div>
-            </div>
-          );
-        })}
+            );
+          })}
       </div>
     </div>
   );

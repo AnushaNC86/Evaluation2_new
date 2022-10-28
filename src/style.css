@@ -11,6 +11,7 @@
   --backgroundBlue: linear-gradient(180deg, #20BBFF 0%, #0E85FF 100%);
   --sideBarColor: #2892FF;
   --activecolor: #FFA136;
+  --color: #2892FF;
 }
 
 .App {
