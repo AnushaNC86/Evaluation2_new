@@ -373,3 +373,11 @@ body.active-modal {
     cursor: pointer;
     text-align: center;
 }
+
+.sitesMobile {
+    display: none;
+}
+
+.addModalMobile {
+    display: none;
+}

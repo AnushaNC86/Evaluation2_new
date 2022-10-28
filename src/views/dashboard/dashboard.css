@@ -9,9 +9,39 @@
 
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1000px) {
     .dashboard {
         margin: 0;
+    }
+
+    .modalContent {
+        position: relative;
+        top: 40%;
+        left: 55%;
+        transform: translate(-50%, -50%);
+        line-height: 1.4;
+        background-color: #ffffff;
+        padding: 30.5px 37.5px;
+        border-radius: 0.8em;
+        display: flex;
+        flex-direction: column;
+        width: 89%;
+    }
+
+
+
+    .modalContent {
+        position: relative;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        line-height: 1.4;
+        background-color: #ffffff;
+        padding: 30.5px 37.5px;
+        border-radius: 0.8em;
+        display: flex;
+        flex-direction: column;
+        width: 73%;
     }
 }
 
@@ -19,6 +49,7 @@
     .topBarContainer {
         width: 100%;
     }
+
 }
 
 @media only screen and (max-width: 580px) {
@@ -54,10 +85,9 @@
     }
 
     .cross {
-
         position: fixed;
-        bottom: 0;
-        right: 33px;
+        bottom: 2rem;
+        right: 2rem;
         z-index: 1;
     }
 
@@ -80,11 +110,7 @@
         display: none;
     }
 
-    .Sites {
-        position: fixed;
-        z-index: 1;
-        top: 8rem;
-    }
+
 
     .socialMediaHead {
 
@@ -92,7 +118,6 @@
         top: 7rem;
         right: 1rem;
         z-index: 1;
-
     }
 
     .socialMedia {
@@ -113,5 +138,49 @@
 
 
 
+    .sitesMedia,
+    .socialMediaHead {
+        display: none;
+    }
+
+    .sitesMobile {
+        position: fixed;
+        right: 0;
+        top: 5rem;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        background: white;
+        padding: 2rem;
+    }
+
+    .socialMediaHead1 {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .addModalMobile {
+        display: block;
+    }
+
+    .inputFiledItemss {
+        display: flex;
+        flex-direction: column;
+
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .modal,
+    .modalCover {
+        width: 74.1vw;
+        /* height: 100vh; */
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+    }
 
 }

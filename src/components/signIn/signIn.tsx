@@ -24,6 +24,7 @@ const SignIn = () => {
       storedData.map((user: any) => {
         if (user.mobile === loginData.mobile) {
           if (user.mPin === loginData.mPin) {
+            localStorage.setItem("currentUser", JSON.stringify(mobile));
             navigate("/home");
           } else {
             alert("enter valid credentials");
@@ -62,7 +63,7 @@ const SignIn = () => {
         <form className="formConatiner" onSubmit={onsubmitHandler}>
           <div className="txtField">
             <input
-              type="number"
+              type="text"
               className="mobileNo"
               placeholder="Mobile Number"
               name="mobileNo"

@@ -45,6 +45,7 @@ const SignUp = () => {
         if (userValues.mPin && userValues.cmPin && userValues.mPin === cmPin) {
           enteredData.push(userValues);
           localStorage.setItem("users", JSON.stringify(enteredData));
+          localStorage.setItem(JSON.stringify(mobile), JSON.stringify([]));
           navigate("/");
         } else {
           alert("MPIN doesnot match");
@@ -107,7 +108,7 @@ const SignUp = () => {
         <form className="formConatiner" onSubmit={submitHandler}>
           <div className="txtField">
             <input
-              type="number"
+              type="text"
               className="mobileNo"
               placeholder="Mobile Number"
               name="mobileNo"
